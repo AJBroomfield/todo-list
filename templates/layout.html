@@ -1,0 +1,19 @@
+<html>
+    <head>
+    <style>
+    h2 {
+        word-spacing:40px;
+    }
+    </style>  
+    </head>
+    <body>
+        <h1>These are a list of names</h1>
+        <h2><a href="{{ url_for('home') }}">home</a>
+        <a href="{{ url_for('names') }}">names</a>
+        <a href="{{ url_for('harry') }}">harry</a>
+        <a href="{{ url_for('ben') }}">ben</a></h2>
+
+        {% block body %}
+        {% endblock body %}
+    </body>
+</html>
