@@ -38,19 +38,17 @@ def delete(id):
     db.session.commit()
     return redirect(url_for('home'))
     
-
-
-@app.route('/complete/<int:id>')
+@app.route('/complete/<int:id>', methods=["GET","POST"])
 def complete(id):
     task = Tasks.query.filter_by(id=id).first()
     task.status = True
     db.session.commit()
-    return f'Tast {id} is now complete'
+    return redirect(url_for('home'))
 
 @app.route('/incomplete/<int:id>')
 def incomplete(id):
     task = Tasks.query.filter_by(id=id).first()
     task.status = False
     db.session.commit()
-    return f'Tast {id} is now incomplete'
+    return redirect(url_for('home'))
 
